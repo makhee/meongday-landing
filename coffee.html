@@ -17,6 +17,14 @@
   .way .ic { font-size: 24px; }
   .way .sub { display: block; font-weight: 400; font-size: 13px; color: var(--muted); }
   .way .go { margin-left: auto; color: var(--yellow); }
+  .qr { display: none; text-align: center; margin: 8px 0 24px; }
+  .qr img { width: 200px; height: 200px; background: #fff; padding: 8px; border: 3px solid var(--outline); image-rendering: pixelated; }
+  .qr p { color: var(--muted); font-size: 13px; margin: 8px 0 0; }
+  /* PC(마우스): 카카오페이 송금은 휴대폰에서만 열려서 QR 을 보여줌 */
+  @media (hover: hover) and (pointer: fine) {
+    .qr { display: block; }
+    .way.mobile-only { display: none; }
+  }
   .soon { text-align: center; color: var(--muted); padding: 20px; border: 2px dashed var(--navy); }
 </style>
 </head>
@@ -35,6 +43,10 @@
   </div>
 
   <div class="ways" id="ways"></div>
+  <div class="qr" id="qr-kakao">
+    <img src="coffee-kakaopay-qr.svg" alt="카카오페이 송금 QR 코드">
+    <p>💛 휴대폰 카메라로 찍으면 카카오페이 송금 화면이 열려요</p>
+  </div>
 
   <h2>알아 두세요</h2>
   <ul>
@@ -48,7 +60,7 @@
 <script>
   // 후원 방법: 주소를 넣은 것만 보여요. 비어 있으면 "준비 중"
   const WAYS = [
-    { icon: '💛', name: '카카오페이로 커피 보내기', sub: '휴대폰에서 누르면 카카오톡 송금 화면이 열려요', url: 'https://qr.kakaopay.com/Ej841HWmY' },
+    { icon: '💛', name: '카카오페이로 커피 보내기', sub: '휴대폰에서 누르면 카카오톡 송금 화면이 열려요', url: 'https://qr.kakaopay.com/Ej841HWmY', mobileOnly: true },
     { icon: '☕', name: 'Buy Me a Coffee', sub: '해외 카드 · 페이팔', url: '' },
   ];
   const box = document.getElementById('ways');
@@ -58,7 +70,7 @@
   } else {
     for (const w of list) {
       const a = document.createElement('a');
-      a.className = 'way'; a.href = w.url; a.target = '_blank'; a.rel = 'noopener';
+      a.className = 'way' + (w.mobileOnly ? ' mobile-only' : ''); a.href = w.url; a.target = '_blank'; a.rel = 'noopener';
       a.innerHTML = '<span class="ic" aria-hidden="true"></span><span><span class="nm"></span><span class="sub"></span></span><span class="go" aria-hidden="true">→</span>';
       a.querySelector('.ic').textContent = w.icon;
       a.querySelector('.nm').textContent = w.name;
