@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>멍데이 커피 사주기</title>
+<meta name="description" content="멍데이를 혼자 만드는 개발자에게 커피 한 잔으로 응원을 보내 주세요.">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="legal.css">
+<style>
+  .hero { text-align: center; padding: 8px 0 4px; }
+  .hero .cup { font-size: 56px; line-height: 1; }
+  .ways { display: grid; gap: 12px; margin: 24px 0; }
+  .way { display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: var(--navy); border: 3px solid var(--outline);
+         color: var(--ink); text-decoration: none; font-weight: 700; box-shadow: 4px 4px 0 var(--outline); }
+  .way:hover, .way:focus-visible { transform: translate(1px, 1px); box-shadow: 3px 3px 0 var(--outline); }
+  .way .ic { font-size: 24px; }
+  .way .sub { display: block; font-weight: 400; font-size: 13px; color: var(--muted); }
+  .way .go { margin-left: auto; color: var(--yellow); }
+  .soon { text-align: center; color: var(--muted); padding: 20px; border: 2px dashed var(--navy); }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="home" href="./"><img src="icon.png" alt="">멍데이</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div class="cup" aria-hidden="true">☕🐶</div>
+    <h1>개발자에게 커피 사주기</h1>
+    <p class="meta">멍데이는 한 사람이 만들고 있어요. 마음에 드셨다면 커피 한 잔으로 응원해 주세요.</p>
+  </div>
+
+  <div class="ways" id="ways"></div>
+
+  <h2>알아 두세요</h2>
+  <ul>
+    <li>후원은 자유예요. 후원하지 않아도 멍데이의 모든 기능을 똑같이 쓸 수 있어요.</li>
+    <li>후원해도 앱 안에서 받는 아이템 · 뼈다귀 같은 보상은 없어요.</li>
+    <li>결제는 아래 각 서비스에서 이루어져요. 멍데이는 결제 정보를 받거나 저장하지 않아요.</li>
+    <li>문의: <a href="mailto:support@meongday.me">support@meongday.me</a></li>
+  </ul>
+</main>
+
+<script>
+  // 후원 방법: 주소를 넣은 것만 보여요. 비어 있으면 "준비 중"
+  const WAYS = [
+    { icon: '💙', name: '토스로 보내기', sub: '토스 앱에서 바로', url: '' },
+    { icon: '💛', name: '카카오페이로 보내기', sub: '카카오페이 송금', url: '' },
+    { icon: '☕', name: 'Buy Me a Coffee', sub: '해외 카드 · 페이팔', url: '' },
+  ];
+  const box = document.getElementById('ways');
+  const list = WAYS.filter((w) => /^https:\/\//.test(w.url));
+  if (!list.length) {
+    box.innerHTML = '<div class="soon">후원 방법을 준비하고 있어요. 조금만 기다려 주세요 🐾</div>';
+  } else {
+    for (const w of list) {
+      const a = document.createElement('a');
+      a.className = 'way'; a.href = w.url; a.target = '_blank'; a.rel = 'noopener';
+      a.innerHTML = '<span class="ic" aria-hidden="true"></span><span><span class="nm"></span><span class="sub"></span></span><span class="go" aria-hidden="true">→</span>';
+      a.querySelector('.ic').textContent = w.icon;
+      a.querySelector('.nm').textContent = w.name;
+      a.querySelector('.sub').textContent = w.sub;
+      box.append(a);
+    }
+  }
+</script>
+</body>
+</html>
