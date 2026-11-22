@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>강아지 도트 캐릭터 만들기 — 우리 강아지 픽셀 아트 무료 | 멍데이</title>
+<meta name="description" content="설치 없이 바로, 우리 강아지를 닮은 도트 캐릭터를 무료로 만들어 PNG로 저장하세요. 말티즈 · 포메라니안 · 푸들 · 시바견 · 웰시코기 등 견종을 고르고 귀 · 눈 · 무늬 · 털색을 바꿔 반려견 픽셀 아트를 완성해요.">
+<meta property="og:title" content="강아지 도트 캐릭터 만들기 — 멍데이">
+<meta property="og:description" content="우리 강아지 닮은 픽셀 캐릭터를 무료로 만들고 PNG로 저장해요. 프로필 사진 · 배경화면으로 써 보세요.">
+<meta property="og:url" content="https://meongday.me/dot.html">
+<meta property="og:image" content="https://meongday.me/shots/og.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="멍데이">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://meongday.me/dot.html">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galmuri@2.40.2/dist/galmuri.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[
+{"@type":"WebApplication","name":"강아지 도트 캐릭터 만들기","url":"https://meongday.me/dot.html","applicationCategory":"DesignApplication","operatingSystem":"웹 브라우저","inLanguage":"ko-KR","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"publisher":{"@type":"Organization","name":"멍데이","url":"https://meongday.me/"}},
+{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"멍데이","item":"https://meongday.me/"},{"@type":"ListItem","position":2,"name":"강아지 도트 캐릭터 만들기","item":"https://meongday.me/dot.html"}]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"강아지 도트 캐릭터 만들기는 무료인가요?","acceptedAnswer":{"@type":"Answer","text":"네, 무료예요. 회원가입이나 설치 없이 이 페이지에서 바로 만들고 PNG로 저장할 수 있어요."}},
+{"@type":"Question","name":"만든 도트 캐릭터는 어디에 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"카카오톡 · 인스타그램 프로필 사진, 휴대폰 배경화면, 개인 블로그처럼 개인적인 용도로 자유롭게 쓰세요."}},
+{"@type":"Question","name":"사진을 올려야 하나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 사진 없이 견종을 고르고 귀 · 눈 · 입 · 무늬 · 털색을 골라 만들어요. 아무것도 서버로 보내지 않아요."}},
+{"@type":"Question","name":"앱에서도 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"강아지 산책 기록 앱 멍데이에서 같은 방식으로 만든 도트 친구가 산책 지도 · 랭킹 · 모임방에 함께 나와요. Google Play에서 무료로 받을 수 있어요."}}
+]}]}</script>
+<style>
+  :root {
+    --night: #12143A; --navy: #23264F; --ink: #F2F2FF; --muted: #A9ACD6; --outline: #06071C;
+    --yellow: #FFCF3A; --yellow-dk: #D99A12; --orange: #FF8A2B; --grass: #3B7A3E; --on-yellow: #23234A;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--night); color: var(--ink); font-family: Galmuri11, "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif; line-height: 1.7; -webkit-font-smoothing: none; }
+  a { color: inherit; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left)); padding-right: max(16px, env(safe-area-inset-right)); }
+  .px { border: 4px solid var(--outline); box-shadow: inset 0 -6px 0 rgba(0,0,0,.25); }
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 10px 16px 14px; background: var(--yellow); color: var(--on-yellow); font-family: Galmuri14, Galmuri11, sans-serif; font-size: 16px; text-decoration: none; border: 4px solid var(--outline); box-shadow: inset 0 -6px 0 var(--yellow-dk); cursor: pointer; }
+  .btn:active { transform: translateY(2px); box-shadow: inset 0 -2px 0 var(--yellow-dk); }
+  .btn.ghost { background: var(--navy); color: var(--ink); box-shadow: inset 0 -6px 0 #171A3F; }
+  header.top { position: sticky; top: 0; z-index: 5; background: rgba(18,20,58,.92); backdrop-filter: blur(6px); border-bottom: 4px solid var(--outline); }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-family: Galmuri14, sans-serif; font-size: 22px; color: var(--orange); text-decoration: none; text-shadow: 2px 2px 0 var(--outline); }
+  .brand img { width: 34px; height: 34px; border: 3px solid var(--outline); image-rendering: pixelated; }
+  nav a { margin-left: 16px; color: var(--muted); text-decoration: none; font-size: 14px; }
+  nav a:hover { color: var(--yellow); }
+  .kicker { font-family: GalmuriMono11, monospace; color: var(--yellow); font-size: 13px; letter-spacing: .12em; }
+  .muted { color: var(--muted); }
+  h1 { font-family: Galmuri14, sans-serif; font-weight: 400; font-size: clamp(26px, 5vw, 40px); line-height: 1.3; margin: 6px 0 10px; text-shadow: 3px 3px 0 var(--outline); }
+  h2 { font-family: Galmuri14, sans-serif; font-weight: 400; font-size: clamp(20px, 3.4vw, 28px); margin: 6px 0 14px; }
+  h3 { font-family: Galmuri14, sans-serif; font-weight: 400; font-size: 17px; color: var(--yellow); margin: 0 0 6px; }
+  section { padding: 40px 0; border-bottom: 4px solid var(--outline); }
+  .intro { padding-top: 36px; }
+
+  .maker { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 20px; align-items: start; }
+  .stage { background: var(--navy); padding: 16px; display: flex; flex-direction: column; align-items: center; gap: 12px; position: sticky; top: 76px; }
+  .yard { width: 100%; max-width: 300px; aspect-ratio: 1 / 1.05; border: 4px solid var(--outline); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 12px; position: relative; overflow: hidden; }
+  .yard canvas { position: relative; max-width: 100%; height: auto; image-rendering: pixelated; animation: bob .5s steps(2) infinite; }
+  @keyframes bob { 50% { transform: translateY(-3px); } }
+  @media (prefers-reduced-motion: reduce) { .yard canvas { animation: none; } }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+  .panel { background: #181B47; padding: 16px; min-width: 0; }
+  .group { margin-bottom: 14px; }
+  .group b { display: block; font-weight: 400; font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; min-width: 0; }
+  .chip { font: inherit; font-size: 13px; line-height: 1.3; border: 3px solid var(--outline); background: #2D3162; color: var(--ink); padding: 4px 9px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+  .chip[aria-pressed="true"] { background: var(--yellow); color: var(--on-yellow); }
+  .chip i { width: 12px; height: 12px; border: 2px solid var(--outline); display: inline-block; }
+
+  .breeds { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }
+  .breed { background: var(--navy); border: 4px solid var(--outline); padding: 10px 6px 6px; display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; font: inherit; color: var(--ink); }
+  .breed:hover { background: #2D3162; }
+  .breed canvas { image-rendering: pixelated; }
+  .breed span { font-size: 13px; }
+  .steps, .faq { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+  .card { background: var(--navy); padding: 16px; }
+  .card p { margin: 0; color: var(--muted); font-size: 14px; }
+  .cta { text-align: center; }
+  footer { padding: 28px 0 calc(28px + env(safe-area-inset-bottom)); color: var(--muted); font-size: 12px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+  @media (max-width: 760px) {
+    .maker { grid-template-columns: 1fr; }
+    .stage { position: static; }
+    nav a.opt { display: none; }
+  }
+</style>
+<meta name="google-site-verification" content="EElnL5PK_RroR1txlMfIxmVQUBXoiZlwM4g6D-L935U">
+<meta name="naver-site-verification" content="5308c8956efb1dfcc09e66f0c83b4c5ca2e9cdfa">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="icon.png" alt="">멍데이</a>
+    <nav>
+      <a class="opt" href="#breeds">견종별 도트</a>
+      <a class="opt" href="#faq">자주 묻는 질문</a>
+      <a href="./">멍데이 앱</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="intro">
+  <div class="wrap">
+    <div class="kicker">PIXEL DOG MAKER</div>
+    <h1>강아지 도트 캐릭터 만들기</h1>
+    <p class="muted" style="max-width:40em;margin:0 0 24px">우리 강아지를 닮은 <b>도트 캐릭터(픽셀 아트)</b>를 무료로 만들어 보세요. 사진도, 설치도, 가입도 필요 없어요. 견종을 고르고 귀 · 눈 · 입 · 머리털 · 무늬 · 꼬리 · 털색을 바꾼 뒤 <b>PNG로 저장</b>하면 끝! <span id="count"></span></p>
+
+    <div class="maker">
+      <div class="stage px">
+        <div class="yard" id="yard"></div>
+        <div class="row">
+          <button class="btn" type="button" id="rand">🎲 랜덤</button>
+          <button class="btn" type="button" id="save">⬇ PNG 저장</button>
+        </div>
+        <div class="group" style="margin:0;width:100%">
+          <b>배경</b>
+          <div class="chips" id="bgs"></div>
+        </div>
+      </div>
+      <div class="panel px" id="panel">
+        <div class="group"><b>견종으로 시작하기</b><div class="chips" id="presets"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="breeds" style="background:#0E1033">
+  <div class="wrap">
+    <div class="kicker">BREEDS</div>
+    <h2>견종별 강아지 도트</h2>
+    <p class="muted" style="max-width:40em">말티즈, 포메라니안, 푸들, 치와와, 시바견, 웰시코기, 허스키, 골든 리트리버, 비글, 닥스훈트, 퍼그, 프렌치 불독, 슈나우저, 보더콜리, 달마시안, 시츄의 도트 캐릭터예요. 눌러서 위에서 바로 꾸며 보세요. 믹스견이라면 가장 닮은 견종에서 시작해 무늬와 색을 바꾸면 돼요.</p>
+    <div class="breeds" id="breed-grid"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">HOW TO</div>
+    <h2>도트 캐릭터 만드는 법</h2>
+    <div class="steps">
+      <div class="card px"><h3>1. 견종 고르기</h3><p>우리 강아지와 가장 닮은 견종을 누르면 어울리는 귀 · 무늬 · 꼬리가 먼저 채워져요.</p></div>
+      <div class="card px"><h3>2. 닮게 다듬기</h3><p>털색 · 무늬색 · 귀 색부터 맞추고, 눈과 입 모양으로 표정을 골라요. 크기는 소형 · 중형 · 대형이 있어요.</p></div>
+      <div class="card px"><h3>3. 꾸미고 저장</h3><p>리본 · 왕관 · 스카프를 씌우고 배경을 고른 뒤 PNG로 저장하세요. 프로필 사진이나 배경화면으로 딱이에요.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="kicker">FAQ</div>
+    <h2>자주 묻는 질문</h2>
+    <div class="faq">
+      <div class="card px"><h3>무료인가요?</h3><p>네, 무료예요. 회원가입이나 설치 없이 이 페이지에서 바로 만들고 PNG로 저장할 수 있어요.</p></div>
+      <div class="card px"><h3>어디에 쓸 수 있나요?</h3><p>카카오톡 · 인스타그램 프로필 사진, 휴대폰 배경화면, 개인 블로그처럼 개인적인 용도로 자유롭게 쓰세요.</p></div>
+      <div class="card px"><h3>사진을 올려야 하나요?</h3><p>아니요. 사진 없이 부위를 골라 만들어요. 만든 그림은 내 브라우저 안에서만 그려지고 서버로 보내지 않아요.</p></div>
+      <div class="card px"><h3>앱에서도 쓸 수 있나요?</h3><p>강아지 산책 기록 앱 멍데이에서 같은 방식으로 만든 도트 친구가 산책 지도 · 랭킹 · 모임방에 함께 나와요.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="kicker">WALK TOGETHER</div>
+    <h2>도트 친구랑 같이 산책해요</h2>
+    <p class="muted" style="max-width:34em;margin:0 auto 22px">멍데이는 강아지 산책 기록 앱이에요. 함께 걸은 길을 지도에 남기고, 퀘스트를 깨고, 동네 친구들과 랭킹을 겨뤄요.</p>
+    <div class="row">
+      <a class="btn" href="https://play.google.com/store/apps/details?id=app.meongday" target="_blank" rel="noopener">▶ Google Play에서 받기</a>
+      <a class="btn ghost" href="./">멍데이 둘러보기</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 멍데이</span>
+    <span><a href="terms.html">이용약관</a> · <a href="privacy.html"><b>개인정보처리방침</b></a> · <a href="location-terms.html">위치정보 이용약관</a></span>
+    <span>글꼴 Galmuri (OFL)</span>
+  </div>
+</footer>
+
+<script src="avatar.js"></script>
+<script>
+(function () {
+  var A = window.MeongAvatar;
+  if (!A) return;
+  var $ = function (id) { return document.getElementById(id); };
+  var clone = function (o) { return JSON.parse(JSON.stringify(o)); };
+  var dog = clone(A.PRESETS[5][1]);
+  var items = {};
+  var BGS = [['밤하늘', '#2B3470', '#3B7A3E'], ['잔디', '#BFE3FF', '#3B7A3E'], ['벚꽃', '#FFD6E0', '#FFB3C6'], ['화이트', '#FAFAF5', '#E6E6DC'], ['투명', null, null]];
+  var bg = 0;
+  var ITEM_NAMES = [['ribbon', '리본'], ['crown', '왕관'], ['scarf', '스카프']];
+  var chipSets = {};
+
+  function itemList() { return ITEM_NAMES.map(function (i) { return i[0]; }).filter(function (k) { return items[k]; }); }
+
+  function chip(label, onClick, swatch) {
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'chip';
+    if (swatch) { var i = document.createElement('i'); i.style.background = swatch; b.append(i); }
+    b.append(document.createTextNode(label)); b.onclick = onClick; return b;
+  }
+
+  function sync() {
+    Object.keys(chipSets).forEach(function (key) {
+      chipSets[key].forEach(function (pair) { pair[1].setAttribute('aria-pressed', String(String(dog[key]) === String(pair[0]))); });
+    });
+    ITEM_NAMES.forEach(function (it, j) { $('items').children[j].setAttribute('aria-pressed', String(!!items[it[0]])); });
+    [].forEach.call($('bgs').children, function (c, j) { c.setAttribute('aria-pressed', String(j === bg)); });
+  }
+
+  function render() {
+    var y = $('yard'), b = BGS[bg];
+    y.style.background = b[1] ? 'linear-gradient(' + b[1] + ' 0 72%, ' + b[2] + ' 72%)' : 'repeating-conic-gradient(#2D3162 0 25%, #23264F 0 50%) 0 0 / 20px 20px';
+    y.replaceChildren(A.draw(dog, 13, itemList()));
+    sync();
+  }
+
+  // 부위 고르기
+  var panel = $('panel');
+  A.PRESETS.forEach(function (p) { $('presets').append(chip(p[0], function () { dog = clone(p[1]); render(); })); });
+  A.GROUPS.forEach(function (g) {
+    var key = g[0], wrap = document.createElement('div'); wrap.className = 'group';
+    var t = document.createElement('b'); t.textContent = g[1]; wrap.append(t);
+    var box = document.createElement('div'); box.className = 'chips'; chipSets[key] = [];
+    g[2].forEach(function (opt) {
+      var sw = key === 'fur' ? A.FUR[opt[0]] : key === 'sub' ? A.SUB[opt[0]][1] : null;
+      var c = chip(opt[1], function () { dog[key] = opt[0]; render(); }, sw);
+      chipSets[key].push([opt[0], c]); box.append(c);
+    });
+    wrap.append(box); panel.append(wrap);
+  });
+  var iw = document.createElement('div'); iw.className = 'group';
+  iw.innerHTML = '<b>꾸미기</b><div class="chips" id="items"></div>'; panel.append(iw);
+  ITEM_NAMES.forEach(function (it) { $('items').append(chip(it[1], function () { items[it[0]] = !items[it[0]]; render(); })); });
+  BGS.forEach(function (b, j) { $('bgs').append(chip(b[0], function () { bg = j; render(); }, b[1])); });
+
+  // 견종 그리드
+  A.PRESETS.forEach(function (p) {
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'breed';
+    b.setAttribute('aria-label', p[0] + ' 도트 캐릭터로 시작하기');
+    b.append(A.draw(p[1], 4));
+    var s = document.createElement('span'); s.textContent = p[0]; b.append(s);
+    b.onclick = function () { dog = clone(p[1]); render(); $('yard').scrollIntoView({ behavior: 'smooth', block: 'center' }); };
+    $('breed-grid').append(b);
+  });
+
+  $('rand').onclick = function () { dog = A.random(); render(); };
+
+  // PNG 저장: 큰 픽셀로 그려 배경과 합치기
+  $('save').onclick = function () {
+    var sprite = A.draw(dog, 24, itemList());
+    var pad = 48, W = sprite.width + pad * 2, H = sprite.height + pad * 2;
+    var cv = document.createElement('canvas'); cv.width = W; cv.height = H;
+    var c = cv.getContext('2d'), b = BGS[bg];
+    if (b[1]) { c.fillStyle = b[1]; c.fillRect(0, 0, W, H); c.fillStyle = b[2]; c.fillRect(0, Math.round(H * 0.78), W, H); }
+    c.imageSmoothingEnabled = false;
+    c.drawImage(sprite, pad, pad);
+    var a = document.createElement('a'); a.download = 'meongday-dot.png'; a.href = cv.toDataURL('image/png');
+    document.body.append(a); a.click(); a.remove();
+  };
+
+  $('count').textContent = '(만들 수 있는 모습 ' + A.combos.toLocaleString('ko-KR') + '가지)';
+  render();
+})();
+</script>
+</body>
+</html>
